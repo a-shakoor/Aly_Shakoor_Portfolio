@@ -1,0 +1,19 @@
+{
+  "name": "aly_shakoor_portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "\u001b[B\u001b[B"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-shakoor/Aly_Shakoor_Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-shakoor/Aly_Shakoor_Portfolio/issues"
+  },
+  "homepage": "https://github.com/a-shakoor/Aly_Shakoor_Portfolio#readme"
+}
