@@ -1,4 +1,4 @@
-# Research Assistant
+# Research Assistantship
 
 ## My work as a research assistant for Dr. Tarkeshwar Singh, Department of Kinesiology at the University of Georgia. For the most part, I worked in MATLAB and made use of many elements of the PsychToolbox package.
 
