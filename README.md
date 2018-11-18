@@ -1,4 +1,4 @@
-#Aly Shakoor's Portfolio
+# Aly Shakoor's Portfolio
 
 A repository of my work in software development, including
 - my assignments as a research assistant in the Department of Kinesiology at the University of Georgia.
