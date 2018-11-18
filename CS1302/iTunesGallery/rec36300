@@ -1,0 +1,76 @@
+cs1302-gallery:
+total 52
+-rw-r--r-- 1 ugrad   209 Oct 31 16:50 Makefile
+-rw-r--r-- 1 ugrad 31394 Oct 31 16:50 README.md
+drwxr-xr-x 2 ugrad  4096 Nov  6 18:00 image
+-rw-r--r-- 1 ugrad  2224 Nov  5 23:01 pom.xml
+-rw-r--r-- 1 ugrad     0 Nov  6 22:23 rec36300
+drwxr-xr-x 3 ugrad  4096 Oct 31 16:50 src
+drwxr-xr-x 5 ugrad  4096 Oct 31 17:25 target
+
+cs1302-gallery/image:
+total 772
+-rw-r--r-- 1 ugrad 789506 Nov  6 14:52 IMG_3295.JPG
+
+cs1302-gallery/src:
+total 4
+drwxr-xr-x 3 ugrad 4096 Oct 31 16:50 main
+
+cs1302-gallery/src/main:
+total 4
+drwxr-xr-x 3 ugrad 4096 Oct 31 16:50 java
+
+cs1302-gallery/src/main/java:
+total 4
+drwxr-xr-x 3 ugrad 4096 Oct 31 16:50 cs1302
+
+cs1302-gallery/src/main/java/cs1302:
+total 4
+drwxr-xr-x 2 ugrad 4096 Nov  6 22:18 gallery
+
+cs1302-gallery/src/main/java/cs1302/gallery:
+total 12
+-rw-r--r-- 1 ugrad 11613 Nov  6 22:18 GalleryApp.java
+
+cs1302-gallery/target:
+total 12
+drwxr-xr-x 3 ugrad 4096 Oct 31 17:25 classes
+drwxr-xr-x 3 ugrad 4096 Oct 31 17:25 generated-sources
+drwxr-xr-x 3 ugrad 4096 Oct 31 17:25 maven-status
+
+cs1302-gallery/target/classes:
+total 4
+drwxr-xr-x 3 ugrad 4096 Oct 31 17:25 cs1302
+
+cs1302-gallery/target/classes/cs1302:
+total 4
+drwxr-xr-x 2 ugrad 4096 Nov  6 22:18 gallery
+
+cs1302-gallery/target/classes/cs1302/gallery:
+total 16
+-rw-r--r-- 1 ugrad 13163 Nov  6 22:18 GalleryApp.class
+
+cs1302-gallery/target/generated-sources:
+total 4
+drwxr-xr-x 2 ugrad 4096 Oct 31 17:25 annotations
+
+cs1302-gallery/target/generated-sources/annotations:
+total 0
+
+cs1302-gallery/target/maven-status:
+total 4
+drwxr-xr-x 3 ugrad 4096 Oct 31 17:25 maven-compiler-plugin
+
+cs1302-gallery/target/maven-status/maven-compiler-plugin:
+total 4
+drwxr-xr-x 3 ugrad 4096 Oct 31 17:25 compile
+
+cs1302-gallery/target/maven-status/maven-compiler-plugin/compile:
+total 4
+drwxr-xr-x 2 ugrad 4096 Oct 31 17:25 default-compile
+
+cs1302-gallery/target/maven-status/maven-compiler-plugin/compile/default-compile:
+total 8
+-rw-r--r-- 1 ugrad 32 Nov  6 22:18 createdFiles.lst
+-rw-r--r-- 1 ugrad 81 Nov  6 17:54 inputFiles.lst
+/home/ugrads/shakoor/cs1302-gallery:/home/work/cs1302a
