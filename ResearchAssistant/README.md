@@ -7,5 +7,5 @@ I was tasked with programming an interface to test the motor reations of Parkins
 Concepts used in my programming included:
 - implmenting a Graphical User Interface utilizing elements from PsychToolbox, including moving shapes.
 - implementing the driver for the joystick
-- pulling from mathematical functions like uniform/normal distributions and distance formulas to calculate velocities, orientaitons (coordinate system)
+- pulling from mathematical functions like uniform/normal distributions and distance formulas to calculate velocities, orientations (coordinate system)
 - adjusting to meet specifications of the Primary Investigator
