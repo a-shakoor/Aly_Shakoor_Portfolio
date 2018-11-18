@@ -1,0 +1,138 @@
+package cs1302.lists;
+
+/**
+ * extends ArrayGenList
+ * overrides add and set methods to ensure list stays sorted after changing contents
+ */
+public class SortedArrayGenList<T extends Comparable<T>> extends ArrayGenList<T> {
+
+    /** This constructor calls the constructor of the extended ArrayGenList constructor */
+    public SortedArrayGenList() {
+	super();
+    }
+
+    /**
+     * This method overrides the add(T elem) method from ArrayGenList<T>
+     * The goal is to have the list sorted after adding the specified element.
+     * We achieve this by
+     * 1) finding the index where the element should go in order
+     * 2) moving everything to the right starting at that index
+     * 3) inserting the element into that index
+     *
+     * @param elem element to be inserted
+     * @throws NullPointerException if elem is null
+     */
+    public void add(T elem) throws NullPointerException {
+	if(elem == null) { throw new NullPointerException("Element can't be null"); }
+   	expandArrayIfNeeded(5);	//expand by 5 places
+
+	int currentSize = size();
+	int indexToMove = currentSize;
+	for(int i = 0; i < currentSize; i++) {
+	    if(elem.compareTo(boxes[i].get()) < 0) {
+		indexToMove = i;            // 1) find index where element should go
+		moveRight(indexToMove);     // 2) shift over starting at that index
+		break;
+	    } //if
+	} //for
+	
+	Box<T> newElemBox = new Box<T>(elem);   // 3) insert element at that index
+	boxes[indexToMove] = newElemBox;	
+    } //add(T elem)
+
+
+    /**
+     * This method overrides the add(int index, T elem) method of the inherited class.
+     * The stated goal of the method is to add the element at the index and then sort it.
+     * Because the list's order will be altered to sort it after the addition, it doesn't matter
+     * at what index the element is added. Therefore, we can use the same implementation as the
+     * add(T elem) method, i.e. find where the element should go and add it there to be.
+     * See the javadoc add(T elem) for more information on that implementation.
+     *      * @param index index at which the specified element is to be inserted
+     * @param elem  element to be inserted
+     * @throws NullPointerException if elem is null
+     * @throws IndexOutOfBoundsException if the index is out of range 
+     *         {@code (index < 0 || index > size())}
+     */
+    public void add(int index, T elem) throws NullPointerException, IndexOutOfBoundsException {
+	if(elem == null) {
+	    throw new NullPointerException("Element cannot be null");
+	}
+	if(index < 0 || index > size()) {
+	    throw new IndexOutOfBoundsException("Index out of bounds");
+	}
+  
+	add(elem); // same goal so same implementation. see javadoc for this method for details
+    }
+
+    /**
+     * Replaces the element at the specified position in this list with the 
+     * specified element AND THEN SORTS IT.
+     * Accomplished by inserting desired element in correct SORTED order
+     * then removing element at parameter index and shifting left to close the "hole"
+     * This implementation is quicker than inserting element at desired index and then resorting.
+     * @param index index of the element to replace
+     * @param elem element to be stored at the specified position
+     * @return the element previously at the specified position
+     * @throws NullPointerException if the specified element is null
+     * @throws IndexOutOfBoundsException if the index is out of range
+     *         {@code (index < 0 || index >= size())}
+     */
+    public T set(int index, T elem) throws NullPointerException, IndexOutOfBoundsException {
+        if(elem == null) { throw new NullPointerException("Element cannot be null"); }
+	if(index < 0 || index >= size()) { 
+	    throw new IndexOutOfBoundsException("Index is out of bounds"); 
+	}
+	expandArrayIfNeeded(5);
+	T previousElem = boxes[index].get();
+	
+	int currentSize = size();
+	int indexToRemove = index;
+	int indexToPlaceNew = currentSize;  //if elem is > than all list element is placed 
+	                                   //at the end (size()). Else, index reassigned in for loop 
+	for(int i = 0; i < currentSize; i++) {
+	    if(elem.compareTo(boxes[i].get()) < 0) {
+		indexToPlaceNew = i;
+		moveRight(indexToPlaceNew);
+	 	if(indexToPlaceNew <= indexToRemove) { 
+		    indexToRemove++;  //moveRight() moved the desired index over to the right. 
+		}                     //Need to increment to keep up.
+	  	break;
+	    } //if
+	} //for
+	
+	Box<T> newBox = new Box<T>(elem);
+	boxes[indexToPlaceNew] = newBox; 
+	overwriteAndShiftLeft(indexToRemove); //remove element at specified index
+	return previousElem;
+    }
+
+
+    /** 
+     * a helper method that shifts every element to the right 
+     * starting at the index specified by the parameter
+     */
+    private void moveRight(int index) {
+	int currentSize = size();
+	for(int i = currentSize; i > index; i--) {
+	    boxes[i] = boxes[i-1];
+	}
+    } //moveRight()
+    
+
+    /**
+     * a helper method that shifts every element to the left
+     * starting at the index specified by the parameter
+     * thereby overwriting the element at that parameter
+     */
+    private void overwriteAndShiftLeft(int index) {
+	for(int i = index; i < boxes.length - 1; i++) {
+	    boxes[i] = boxes[i + 1];
+	} 
+	boxes[boxes.length-1] = null;
+    } //overwriteAndShiftLeft()
+
+
+
+
+}

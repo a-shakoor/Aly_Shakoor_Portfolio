@@ -1,0 +1,100 @@
+package cs1302.lists;
+
+
+public class Driver {
+    
+    public static <T> void print(T toPrint) { System.out.println(toPrint); }
+    public static <T> void printList(GenList<T>... lists) {
+	for(GenList<T> list : lists) {
+	    System.out.print("{");
+	    for(int i = 0; i < list.size() - 1 ; i++) {
+		System.out.print(list.get(i) + ", ");
+	    }
+	    if(list.size() >= 1) { System.out.print(list.get(list.size() - 1)); }
+	    System.out.println("}");
+	}
+    }
+    public static void main(String[] args) {
+
+	SortedArrayGenList<String> doubleGen = new SortedArrayGenList<>();
+	//print("List is empty: " + doubleGen.isEmpty());
+	//print(doubleGen.size());
+	System.out.println(doubleGen.size());
+	for(int i = 0; i < 100; i++) {
+	    doubleGen.add("hello");
+	}
+	printList(doubleGen);
+	/*doubleGen.clear();
+ 	doubleGen.add(3.0);
+	doubleGen.add(4.0);
+	doubleGen.add(8.0);
+	doubleGen.add(2.0);
+	doubleGen.add(10.0);*/
+	
+	ArrayGenList<String> numberGen = new ArrayGenList<>();
+	numberGen.add("hello");/*
+	numberGen.add(3.0);
+	numberGen.add(4.0);
+	numberGen.add(8.0);*/
+
+	System.out.println("equal? " + doubleGen.equals(numberGen));
+	//printList(doubleGen, numberGen);
+	numberGen.clear();
+	System.out.println("equal? " + doubleGen.equals(numberGen));
+	printList(doubleGen, numberGen);
+  	print(doubleGen.size());
+	doubleGen.add(4.0);
+	print(doubleGen.size());
+	doubleGen.add(4.0);
+	print(doubleGen.size());
+	doubleGen.add(5.0);
+	print(doubleGen.size());
+	doubleGen.add(3, 6.0);
+	print(doubleGen.size());
+	print("List is empty: " + doubleGen.isEmpty());
+	print("List contains 15.0: " + doubleGen.contains(15.0));
+	printList(doubleGen);
+	print("15.0 added."); doubleGen.add(15.0);
+	printList(doubleGen);
+	print("List contains 15.0: " + doubleGen.contains(15.0));
+	print("15.0 removed."); doubleGen.remove(15.0);
+	printList(doubleGen);
+	print("List contains 15.0: " + doubleGen.contains(15.0));
+
+
+	printList(doubleGen);
+	System.out.println("calling set(1, 4.0). Element returned: " + doubleGen.set(1,4.0));
+	printList(doubleGen);
+
+
+        /* ArrayGenList<Double> doubleGen = new ArrayGenList<>()
+
+	System.out.println(doubleGen.isEmpty());
+	doubleGen.add(0, 3.0);
+	doubleGen.add(6.0);
+	doubleGen.add(9.0);
+	doubleGen.add(6.0);
+	System.out.println(doubleGen.contains(7.0));
+	System.out.println(doubleGen.contains(6.0));
+	System.out.println(doubleGen.indexOf(6.0));
+	System.out.println(doubleGen.isEmpty());	
+	doubleGen.clear();
+	System.out.println(doubleGen.isEmpty());
+
+	*/	/*
+	  Output should be:
+	  true
+	  false
+	  true
+	  1
+	  false
+	  true
+
+	 */
+    }
+
+
+    
+
+
+}
