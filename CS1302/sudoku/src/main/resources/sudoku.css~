@@ -1,0 +1,34 @@
+
+.text-field {
+    -fx-border-width: 1, 1, 1, 1;
+    -fx-border-color: "green";
+    -fx-background-color: azure;
+    -fx-text-fill: black;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 120%;
+}
+
+.grid-pane {
+    -fx-background-color: "red";
+    -fx-border-color: red;
+    -fx-border-width: 2;
+}
+
+#border-down-right {
+    -fx-border-color: "green" "red" "red" "green";
+    -fx-border-width: 1 3 3 1;
+}	
+    
+#border-down {
+    -fx-border-color: "green" "green" "red" "green";
+    -fx-border-width: 1 1 3 1;
+
+}
+
+#border-right {
+    -fx-border-color: "green" "red" "green" "green";
+    -fx-border-width: 1 3 1 1;
+}
